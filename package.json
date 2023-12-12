@@ -8,15 +8,13 @@
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "start": "run-p 'start:**'",
     "build": "npm-run-all clean -p 'build:**'",
-    "test": "jest",
     "build:js": "parcel build --target main --target module",
     "build:types": "tsc --outDir dist",
     "clean": "rimraf dist",
     "start:js": "parcel watch --target main --target module --no-hmr --no-cache",
     "start:types": "tsc --outDir dist --watch",
-    "prepack": "yarn build"
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
